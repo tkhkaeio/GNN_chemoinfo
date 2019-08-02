@@ -3,66 +3,68 @@
 please see a implementation in GMM.ipynb
 
 
-|model| cluster | convtype | params|end epoch \(thresh=1e-3)|log_likelihood|BIC |
+|model| num of gauss dist. | convtype | params|end epoch \(thresh=1e-3)|log_likelihood|BIC |
 |:---:|:---:    |:---:     |:---:  |:---:                 |:---:         |:---:|   
-|K1_diag0| 1 | full | 4|2|-7682.897|15394.772|
-|K1_diag1| 1 | diag | 2|2|-9253.312|18521.112|
-|K2_diag0| 2 | full | 4|15|-6200.391|12429.759|
-|K2_diag1| 2 | diag | 2|7|-6896.262|13807.012|
-|**K3_diag0**| 3 | full | 4|24|-5524.239|11077.455|
-|K3_diag1| 3 | diag | 2|9|-5749.907|11514.302|
-|K4_diag0| 4 | full | 4|29|-5522.635|11074.246|
-|K4_diag1| 4 | diag | 2|29|-5747.517|11509.522|
-|K4_diag0| 5 | full | 4|29|-5518.490|11065.957|
-|K5_diag1| 5 | diag | 2|29|-5743.252|11500.993|
+|K1_diag0| 1 | full | 6|2|-7699.809|15435.840|
+|K1_diag1| 1 | diag | 5|2|-9274.189|18577.356|
+|K2_diag0| 2 | full | 12|15|-6152.370|12377.182|
+|K2_diag1| 2 | diag | 10|7|-6884.938|13827.830|
+|**K3_diag0**| 3 | full | 18|24|-5451.755|**11012.173**|
+|K3_diag1| 3 | diag | 15|9|-5702.959|11492.849|
+|K4_diag0| 4 | full | 24|29|-5448.348|11041.580|
+|K4_diag1| 4 | diag | 20|29|-5700.893|11517.694|
+|K4_diag0| 5 | full | 30|29|-5446.084|11073.273|
+|K5_diag1| 5 | diag | 25|29|-5699.974|11544.833|
 
+## BIC to K size
+<img src='result/BIC.png'>
 
 ## K1_diag0
-<img src='result/result_K1_diag0.png'>
-<img src='gif/gif_K1_diag0_dist.gif'>
-<img src='gif/gif_K1_diag0_loss.gif'>
+<img src='result/result_K1_diag0.png' width=50%>
+<img src='gif/gif_K1_diag0_dist.gif' width=50%>
+<img src='gif/gif_K1_diag0_loss.gif' width=50%>
 
 ## K1_diag1
-<img src='result/result_K1_diag1.png'>
-<img src='gif/gif_K1_diag1_dist.gif'>
-<img src='gif/gif_K1_diag1_loss.gif'>
+<img src='result/result_K1_diag1.png' width=50%>
+<img src='gif/gif_K1_diag1_dist.gif' width=50%>
+<img src='gif/gif_K1_diag1_loss.gif' width=50%>
 
 ## K2_diag0
-<img src='result/result_K2_diag0.png'>
-<img src='gif/gif_K2_diag0_dist.gif'>
-<img src='gif/gif_K2_diag0_loss.gif'>
+<img src='result/result_K2_diag0.png' width=50%>
+<img src='gif/gif_K2_diag0_dist.gif' width=50%>
+<img src='gif/gif_K2_diag0_loss.gif' width=50%>
 
 ## K2_diag1
-<img src='result/result_K2_diag1.png'>
-<img src='gif/gif_K2_diag1_dist.gif'>
-<img src='gif/gif_K2_diag1_loss.gif'>
+<img src='result/result_K2_diag1.png' width=50%>
+<img src='gif/gif_K2_diag1_dist.gif' width=50%>
+<img src='gif/gif_K2_diag1_loss.gif' width=50%>
 
 ## K3_diag0
-<img src='result/result_K3_diag0.png'>
-<img src='gif/gif_K3_diag0_dist.gif'>
-<img src='gif/gif_K3_diag0_loss.gif'>
+<img src='result/result_K3_diag0.png' width=50%>
+<img src='gif/gif_K3_diag0_dist.gif' width=50%>
+<img src='gif/gif_K3_diag0_loss.gif' width=50%>
 
 ## K3_diag1
-<img src='result/result_K3_diag1.png'>
-<img src='gif/gif_K3_diag1_dist.gif'>
-<img src='gif/gif_K3_diag1_loss.gif'>
+<img src='result/result_K3_diag1.png' width=50%>
+<img src='gif/gif_K3_diag1_dist.gif' width=50%>
+<img src='gif/gif_K3_diag1_loss.gif' width=50%>
 
 ## K4_diag0
-<img src='result/result_K4_diag0.png'>
-<img src='gif/gif_K4_diag0_dist.gif'>
-<img src='gif/gif_K4_diag0_loss.gif'>
+<img src='result/result_K4_diag0.png' width=50%>
+<img src='gif/gif_K4_diag0_dist.gif' width=50%>
+<img src='gif/gif_K4_diag0_loss.gif' width=50%>
 
 ## K4_diag1
-<img src='result/result_K4_diag1.png'>
-<img src='gif/gif_K4_diag1_dist.gif'>
-<img src='gif/gif_K4_diag1_loss.gif'>
+<img src='result/result_K4_diag1.png' width=50%>
+<img src='gif/gif_K4_diag1_dist.gif' width=50%>
+<img src='gif/gif_K4_diag1_loss.gif' width=50%>
 
 ## K5_diag0
-<img src='result/result_K5_diag0.png'>
-<img src='gif/gif_K5_diag0_dist.gif'>
-<img src='gif/gif_K5_diag0_loss.gif'>
+<img src='result/result_K5_diag0.png' width=50%>
+<img src='gif/gif_K5_diag0_dist.gif' width=50%>
+<img src='gif/gif_K5_diag0_loss.gif' width=50%>
 
 ## K5_diag1
-<img src='result/result_K5_diag1.png'>
-<img src='gif/gif_K5_diag1_dist.gif'>
-<img src='gif/gif_K5_diag1_loss.gif'>
+<img src='result/result_K5_diag1.png' width=50%>
+<img src='gif/gif_K5_diag1_dist.gif' width=50%>
+<img src='gif/gif_K5_diag1_loss.gif' width=50%>
