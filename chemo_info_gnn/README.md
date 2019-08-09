@@ -14,21 +14,13 @@ GNNは主にノードの表現ベクトル$h_v$(node representation)またはグ
 
 まず，ノード$v \in V$に特徴ベクトル$h_v^{(k)} \in \mathbb{R}^D$が割り当てられているものとする．ここで$D$は特徴ベクトルの次元とする．基本的には隣接ノードの情報を集約というフェーズを繰り返すことでそのノードの持つ表現ベクトルを更新していく．この集約の手続きは次のように表現できる．
 
-$$
-a_{v}^{(k)}=\operatorname{AGGREGATE}^{(k)}\left(\left\{h_{u}^{(k-1)} : u \in \mathcal{N}(v)\right\}\right) \quad (1) 
-$$
-
 <img src="https://latex.codecogs.com/gif.latex?a_{v}^{(k)}=\operatorname{AGGREGATE}^{(k)}\left(\left\{h_{u}^{(k-1)}&space;:&space;u&space;\in&space;\mathcal{N}(v)\right\}\right)&space;\quad&space;(1)" />
 
-$$
-h_{v}^{(k)}=\operatorname{COMBINE}^{(k)}\left(h_{v}^{(k-1)}, a_{\nu}^{(k)}\right) \quad (2)
-$$
+<img src="https://latex.codecogs.com/gif.latex?h_{v}^{(k)}=\operatorname{COMBINE}^{(k)}\left(h_{v}^{(k-1)},&space;a_{\nu}^{(k)}\right)&space;\quad&space;(2)" />
 
 ここで，$h_v^{(k)}$は$k$回目のイテレーションのノード$v$が持つ特徴ベクトルであり，$\mathcal N(v)$は$v$に隣接するノード集合．$AGGREGATE^{(k)}(⋅)$,$COMBINE^{(k)}(⋅)$の選び方によってGNNは区別される．例えば，GCNにおいて，要素ごとのmean poolingを用い，AGGREGATEとCOMBINEを統合すると以下のように書ける．
 
-$$
-h_{v}^{(k)}=\operatorname{ReLU}\left(W \cdot \operatorname{MEAN}\left\{h_{u}^{(k-1)}, \forall u \in \mathcal{N}(v) \cup\{v\}\right\}\right)
-$$
+<img src="https://latex.codecogs.com/gif.latex?h_{v}^{(k)}=\operatorname{ReLU}\left(W&space;\cdot&space;\operatorname{MEAN}\left\{h_{u}^{(k-1)},&space;\forall&space;u&space;\in&space;\mathcal{N}(v)&space;\cup\{v\}\right\}\right)" />
 
 Wは学習パラメータとなる行列であり，GraphSAGEは要素ごとのmax-poolingに置き換えたものとして表現できる．またGraphSAGEにおいてはCOMBINEのステップにおいて, $h_v$と$a_v$を結合し線形変換した$W⋅[h_v^{(k−1)}, a_v^{(k)}]$という演算が存在する.
 
@@ -36,9 +28,7 @@ Wは学習パラメータとなる行列であり，GraphSAGEは要素ごとのm
 多くの他のGNNモデルも同様に(1), (2)の形式で記述できる場合が多い．
 グラフの表現ベクトル$h_G$を作るためには，ノード特徴からグラフ特徴を作るREADOUT関数を適用する．
 
-$$
-h_{G}=\operatorname{READOUT}\left(\left\{h_{v}^{(K)} | v \in G\right\}\right) \quad (3)
-$$
+<img src="https://latex.codecogs.com/gif.latex?h_{G}=\operatorname{READOUT}\left(\left\{h_{v}^{(K)}&space;|&space;v&space;\in&space;G\right\}\right)&space;\quad&space;(3)">
 
 ## Experiments
 $AGGREGATE^{(k)}(⋅)$として`sum`，または `mean`関数を用い, $COMBINE^{(k)}(⋅)$として線形変換, または，多層パーセプトロンを用いた．$READOUT^{(k)}$は`sum`，`mean`, または `max`を用い，optimizerは，Adamを利用した．特徴ベクトルは25次元とし，fingerprintからembeddingされる．学習ではミニバッチごと，集約のフェーズ$AGGREGATE^{(k)}(⋅)$,  $COMBINE^{(k)}(⋅)$を実行し，最後に$READOUT^{(k)}(⋅)$を適用する．
