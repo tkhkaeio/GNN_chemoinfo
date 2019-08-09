@@ -1,4 +1,4 @@
-# README
+# GNN for Chemoinformatics
 
 今回, tox21のデータセットを用い, Graph Neural Networks(GNN)の実装を行う．NFP(Neural FingerPrint)により特徴抽出を行い，全結合層により毒素を持つ化合物の予測を行った．
 
