@@ -14,7 +14,11 @@ GNNは主にノードの表現ベクトル$h_v$(node representation)またはグ
 
 まず，ノード$v \in V$に特徴ベクトル$h_v^{(k)} \in \mathbb{R}^D$が割り当てられているものとする．ここで$D$は特徴ベクトルの次元とする．基本的には隣接ノードの情報を集約というフェーズを繰り返すことでそのノードの持つ表現ベクトルを更新していく．この集約の手続きは次のように表現できる．
 
-$$ a_{v}^{(k)}=\operatorname{AGGREGATE}^{(k)}\left(\left\{h_{u}^{(k-1)} : u \in \mathcal{N}(v)\right\}\right) \quad (1) $$
+$$
+\begin{eqnarray}
+a_{v}^{(k)}=\operatorname{AGGREGATE}^{(k)}\left(\left\{h_{u}^{(k-1)} : u \in \mathcal{N}(v)\right\}\right) \quad (1) 
+\end{eqnarray}
+$$
 
 $$
 h_{v}^{(k)}=\operatorname{COMBINE}^{(k)}\left(h_{v}^{(k-1)}, a_{\nu}^{(k)}\right) \quad (2)
